@@ -4,15 +4,19 @@
     Starwars App Adim
   </h1>
   <br/>
-  <input type="text" placeholder="Character Name">
+  <input type="text" [(ngModel)]='typedName' id="keyword" placeholder="Search for character name..." autofocus/>
+
   <br/>
-  <div *ngIf={{getResult}}>    
+  {{typedName}}
+  
+  <br/>
+  <div *ngIf="typedName.length !== 0">    
     Search Result
   </div>
   <br/>
   <app-detail-character></app-detail-character>
   <p>
-    <button class='pull-left btn btn-default' (click)="search()">Search</button> &nbsp;
+    <button class='pull-left btn btn-default' (click)="search(typedName)">Search</button> &nbsp;
     <button (click)="logout()">Logout</button>
   </p>
   </div>
