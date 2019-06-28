@@ -5,6 +5,12 @@
   </h1>
   <br/>
   <input type="text" placeholder="Character Name">
+  <br/>
+  <div *ngIf={{getResult}}>    
+    Search Result
+  </div>
+  <br/>
+  <app-detail-character></app-detail-character>
   <p>
     <button class='pull-left btn btn-default' (click)="search()">Search</button> &nbsp;
     <button (click)="logout()">Logout</button>

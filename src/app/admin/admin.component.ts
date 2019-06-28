@@ -14,9 +14,14 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
+  getResult:boolean = false;
+
   logout(){
     this.authService.logout();
     this.router.navigateByUrl('/login');
   }
 
+  //search(){
+  //  this.getResult = true;
+  //}
 }
