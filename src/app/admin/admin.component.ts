@@ -9,6 +9,7 @@ import { GetCharacterListService } from '../get-character-list.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+ 
 
   constructor(private authService: AuthService, 
     private router: Router,
@@ -24,9 +25,13 @@ export class AdminComponent implements OnInit {
     this.router.navigateByUrl('/login');
   }
 
-  resultJson = {};
+ 
+   resultJson: any = {};
   search(){
-   this.resultJson = this.getCharServ.getCharacterData();
+   this.getCharServ.getCharacterData()
+    .subscribe(res =>{
+      this.resultJson=res.json()
+    });
    
    this.typedName = "Changed";
   }
